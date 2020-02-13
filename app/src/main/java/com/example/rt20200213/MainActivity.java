@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText lauk1;
+    int skaitliukas = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,5 +45,21 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Neteisingas skaičius", Toast.LENGTH_LONG).show();
         }
     }
+
+    public void kvadratu (View view){
+        try{
+            double sk = Double.parseDouble(lauk1.getText().toString());
+            sk=Math.pow(sk,2);
+            lauk1.setText(Double.toString(sk));
+        }catch (Exception e){
+            Log.d("skaicius", "ivestas neteisingas skaicius");
+            Toast.makeText(this, "Neteisingas skaičius", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void clickCount (View view){
+        lauk1.setText(Double.toString(skaitliukas++));
+    }
+
 
 }
