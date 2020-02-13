@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,18 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (Exception e){
             Log.d("skaicius", "ivestas neteisingas skaicius");
+            Toast.makeText(this, "Neteisingas skaičius", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void saknis (View view){
+        try{
+            double sk = Double.parseDouble(lauk1.getText().toString());
+            sk=Math.sqrt(sk);
+            lauk1.setText(Double.toString(sk));
+        }catch (Exception e){
+            Log.d("skaicius", "ivestas neteisingas skaicius");
+            Toast.makeText(this, "Neteisingas skaičius", Toast.LENGTH_LONG).show();
         }
     }
 
